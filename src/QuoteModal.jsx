@@ -29,6 +29,8 @@ export default function QuoteModal({ visible, setVisible, cart }) {
         navigateTo("/success?cart=" + encodeURIComponent(JSON.stringify(cart)))
       )
       .catch((error) => alert(error));
+
+    e.preventDefault();
   }
 
   return (
