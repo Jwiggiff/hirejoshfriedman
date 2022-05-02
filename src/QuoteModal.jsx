@@ -1,14 +1,43 @@
+import { useNavigate } from "react-router-dom";
+
+const encode = (data) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
+
 export default function QuoteModal({ visible, setVisible, cart }) {
+  let navigateTo = useNavigate();
+
   function dismiss() {
     setVisible(false);
+  }
+
+  function handleSubmit(e) {
+    let formData = new FormData(e.target);
+    let data = {};
+    for (let [key, value] of formData.entries()) {
+      data[key] = value;
+    }
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "quote", ...data }),
+    })
+      .then(() =>
+        navigateTo("/success?cart=" + encodeURIComponent(JSON.stringify(cart)))
+      )
+      .catch((error) => alert(error));
   }
 
   return (
     <>
       <div className={"quoteModal " + (visible ? "visible" : "")}>
         <form
-          name="quote"
-          method="POST"
+          onSubmit={handleSubmit}
+          // name="quote"
+          // method="POST"
           // action={"/success?cart=" + encodeURIComponent(JSON.stringify(cart))}
         >
           <div className="modal--header">
