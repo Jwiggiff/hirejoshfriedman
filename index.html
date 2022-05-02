@@ -11,6 +11,15 @@
     <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body>
+    <form name="quote" netlify netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="numSections" value="{cart.numSections}" />
+      <input type="hidden" name="management-page" />
+      <input type="hidden" name="logo-design" />
+      <input type="hidden" name="setup-help" />
+      <input type="text" name="name" />
+      <input type="text" name="email" />
+      <textarea name="notes"></textarea>
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
