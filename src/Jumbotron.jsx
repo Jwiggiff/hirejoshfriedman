@@ -63,6 +63,7 @@ export default function Jumbotron() {
       .to(q("h1"), { translateY: "-2em" })
       .to(q(".info"), { translateY: "-4rem" }, "<")
       .to(q(".pastWork, .pastWork *"), { opacity: 1 }, "<")
+      .to(q(".pastWork li a"), { pointerEvents: "all" }, "<")
       .addLabel("fourteenth");
   });
 
