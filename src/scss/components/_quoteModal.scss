@@ -1,0 +1,99 @@
+@use "../variables" as *;
+
+.quoteModal {
+  position: fixed;
+  inset: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $neutral-lighter;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  width: 0;
+  height: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out, width 0s 0.2s, height 0s 0.2s;
+  z-index: 2;
+  border-radius: 10px;
+  pointer-events: none;
+
+  &.visible {
+    pointer-events: all;
+    opacity: 1;
+    width: 30rem;
+    height: max-content;
+    padding: 0 2rem 1rem 2rem;
+    transition: opacity 0.2s ease-in-out, width 0s, height 0s;
+
+    + .modal-bg {
+      opacity: 1;
+      width: 100vw;
+      height: 100vh;
+      transition: opacity 0.2s ease-in-out, width 0s, height 0s;
+    }
+  }
+
+  + .modal-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out, width 0s 0.2s, height 0s 0.2s;
+  }
+
+  .modal--header {
+    margin-inline: -2rem;
+    margin-bottom: 2rem;
+    padding: 0 2rem;
+    border-bottom: 1px solid $neutral-dark;
+    position: relative;
+
+    h1 {
+      margin-block: 1rem 0.5rem;
+    }
+
+    .close {
+      line-height: 1;
+      position: absolute;
+      top: 0;
+      right: 0.5rem;
+      font-size: 2em;
+    }
+  }
+
+  .modal--body {
+    label {
+      display: block;
+      font-size: 1.2em;
+      font-weight: 500;
+    }
+
+    input,
+    textarea {
+      outline: 1px solid $neutral-dark;
+      padding: 0.25rem 0.5rem;
+      font-size: 1.2em;
+      margin-bottom: 1rem;
+      width: 100%;
+      border-radius: 4px;
+      resize: none;
+
+      &:focus {
+        outline: 2px solid $neutral-dark;
+      }
+    }
+
+    p {
+      font-size: 1.2em;
+      text-align: center;
+    }
+  }
+
+  .modal--actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+}
