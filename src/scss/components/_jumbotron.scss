@@ -1,0 +1,69 @@
+@use "../variables" as *;
+
+.jumbotron {
+  width: 100%;
+  height: 100vh;
+  background-color: $neutral-dark;
+  color: $neutral-light;
+  z-index: 5;
+
+  display: grid;
+  place-items: center;
+
+  :not(:first-child) {
+    position: absolute;
+    opacity: 0;
+  }
+
+  h1 {
+    font-size: 4em;
+    color: $accent;
+
+    &:nth-child(2) {
+      font-family: $orelega;
+    }
+    &:nth-child(3) {
+      font-family: $oleoscript;
+    }
+  }
+
+  .info {
+    margin-top: 4rem;
+
+    li {
+      position: initial !important;
+      font-size: 1.25em;
+    }
+  }
+
+  .pastWork {
+    margin-top: 20rem;
+    text-align: center;
+
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      position: initial;
+
+      li {
+        width: 15em;
+        margin: 0;
+        border-radius: 10px;
+        overflow: hidden;
+        position: initial;
+        transition: transform 0.2s ease-in-out;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

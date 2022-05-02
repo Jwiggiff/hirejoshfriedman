@@ -1,0 +1,66 @@
+@use "../variables" as *;
+
+.card {
+  width: 18rem;
+  min-height: 22rem;
+  padding: 1rem;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  background-color: $neutral-lighter;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0.5;
+
+  &.selected {
+    opacity: 1;
+    outline: 2px $primary solid;
+  }
+
+  &--header {
+    display: grid;
+    place-items: center;
+    position: relative;
+
+    img {
+      width: 3em;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .string {
+      z-index: 1;
+      font-size: 4.5em;
+      font-family: $cursive;
+      line-height: 0;
+      transform: translateY(0.1em);
+    }
+
+    .number {
+      z-index: 1;
+      font-size: 8em;
+      font-family: $cursive;
+      line-height: 0;
+      transform: translateY(0.1em);
+    }
+
+    .circle {
+      z-index: 0;
+      position: absolute;
+      width: 5em;
+      height: 5em;
+      border-radius: 50%;
+      background-color: $accent;
+    }
+  }
+
+  &--title {
+    font-size: 1.5em;
+    margin-bottom: 0;
+  }
+
+  &--body {
+    ul {
+      margin-top: 0;
+    }
+  }
+}

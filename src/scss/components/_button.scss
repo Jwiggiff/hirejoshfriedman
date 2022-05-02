@@ -1,0 +1,15 @@
+@use "../variables" as *;
+
+button {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+
+  &.outline {
+    outline: 2px solid $accent;
+  }
+
+  &.accent {
+    background-color: $accent;
+    font-weight: 600;
+  }
+}
