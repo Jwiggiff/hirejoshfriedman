@@ -9,7 +9,7 @@ export default function QuoteModal({ visible, setVisible, cart }) {
         <form
           name="quote"
           method="POST"
-          action={"/success?cart=" + encodeURIComponent(JSON.stringify(cart))}
+          // action={"/success?cart=" + encodeURIComponent(JSON.stringify(cart))}
           data-netlify="true"
           data-netlify-honeypot="bot-field"
         >
