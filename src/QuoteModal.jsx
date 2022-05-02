@@ -9,7 +9,7 @@ export default function QuoteModal({ visible, setVisible, cart }) {
         <form
           name="quote"
           method="POST"
-          action={"/success?cart=" + encodeURIComponent(JSON.stringify(cart))}
+          // action={"/success?cart=" + encodeURIComponent(JSON.stringify(cart))}
         >
           <div className="modal--header">
             <h1>Get a Quote!</h1>
