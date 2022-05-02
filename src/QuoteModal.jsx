@@ -9,7 +9,7 @@ export default function QuoteModal({ visible, setVisible, cart }) {
         <form
           name="quote"
           method="POST"
-          // action={"/success?cart=" + encodeURIComponent(JSON.stringify(cart))}
+          action={"/success?cart=" + encodeURIComponent(JSON.stringify(cart))}
           data-netlify="true"
           data-netlify-honeypot="bot-field"
         >
@@ -49,6 +49,11 @@ export default function QuoteModal({ visible, setVisible, cart }) {
             <textarea name="notes" id="notes" rows="8"></textarea>
           </div>
           <div className="modal--actions">
+            <a
+              href={"/success?cart=" + encodeURIComponent(JSON.stringify(cart))}
+            >
+              test
+            </a>
             <button className="accent">Get a Quote!</button>
           </div>
         </form>
