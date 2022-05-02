@@ -47,6 +47,7 @@ export default function QuoteModal({ visible, setVisible, cart }) {
             <textarea name="notes" id="notes" rows="8"></textarea>
           </div>
           <div className="modal--actions">
+            <a href="/success">test</a>
             <button className="accent">Get a Quote!</button>
           </div>
         </form>
