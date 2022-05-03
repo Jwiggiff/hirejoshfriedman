@@ -45,7 +45,7 @@ export default function QuoteModal({ visible, setVisible, cart }) {
         >
           <div className="modal--header">
             <h1>Get a Quote!</h1>
-            <button className="close" onClick={(e) => dismiss()}>
+            <button type="button" className="close" onClick={(e) => dismiss()}>
               &times;
             </button>
           </div>
