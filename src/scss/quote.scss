@@ -35,4 +35,13 @@
     justify-content: space-evenly;
     margin-block: 6rem;
   }
+
+  .footer {
+    background-color: $neutral-dark;
+    color: $neutral-light;
+    height: 2.5rem;
+    display: grid;
+    place-items: center;
+    margin-block: 0;
+  }
 }
