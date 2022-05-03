@@ -25,9 +25,10 @@ export default function QuoteModal({ visible, setVisible, cart }) {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "quote", ...data }),
     })
-      .then(() =>
-        navigateTo("/success?cart=" + encodeURIComponent(JSON.stringify(cart)))
-      )
+      .then(() => {
+        // navigateTo("/success?cart=" + encodeURIComponent(JSON.stringify(cart)))
+        navigateTo("/success", { state: { cart } });
+      })
       .catch((error) => alert(error));
 
     e.preventDefault();
@@ -50,21 +51,17 @@ export default function QuoteModal({ visible, setVisible, cart }) {
           </div>
           <div className="modal--body">
             <input type="hidden" name="form-name" value="quote" />
-            <input type="hidden" name="numSections" value={cart.numSections} />
             <input
               type="hidden"
-              name="management-page"
-              value={cart.extras.includes("Management Page")}
+              name="numberOfSections"
+              value={cart.numSections}
             />
             <input
               type="hidden"
-              name="logo-design"
-              value={cart.extras.includes("Logo Design")}
-            />
-            <input
-              type="hidden"
-              name="setup-help"
-              value={cart.extras.includes("Setup Help")}
+              name="extras"
+              value={
+                cart.extras.length > 0 ? cart.extras.join(", ") : "No Extras"
+              }
             />
             <p>
               {cart.numSections} Section{cart.numSections > 1 ? "s" : ""} +{" "}

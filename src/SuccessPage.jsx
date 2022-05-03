@@ -1,8 +1,8 @@
 import { useSearchParams } from "react-router-dom";
 
 export default function SuccessPage() {
-  let [params, setParams] = useSearchParams();
-  let cart = JSON.parse(params.get("cart"));
+  // let [params, setParams] = useSearchParams();
+  // let cart = JSON.parse(params.get("cart"));
 
   return (
     <section className="success">
