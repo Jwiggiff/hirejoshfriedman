@@ -104,8 +104,8 @@ export default function Quote() {
           >
             <p>
               If you don't have a logo for your business, I'll create one as
-              part of the website. Just provide the business name and any ideas you
-              may have.
+              part of the website. Just provide the business name and any ideas
+              you may have.
             </p>
           </Card>
           <Card
@@ -121,6 +121,10 @@ export default function Quote() {
               free hosting and guide you through buying a domain name.
             </p>
           </Card>
+        </div>
+        <div className="footer">
+          For technical issues or questions, please email
+          business@joshfriedman.dev
         </div>
       </div>
       <CartBar cart={cart} />
