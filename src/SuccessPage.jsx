@@ -1,8 +1,8 @@
-import { useSearchParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 export default function SuccessPage() {
-  // let [params, setParams] = useSearchParams();
-  // let cart = JSON.parse(params.get("cart"));
+  let { state } = useLocation();
+  let { cart } = state;
 
   return (
     <section className="success">
@@ -10,10 +10,10 @@ export default function SuccessPage() {
         <h1 className="big">👍</h1>
         <h1>Thank You!</h1>
         <h3>A quote has been requested for the following order:</h3>
-        {/* <p>
+        <p>
           {cart.numSections} Section{cart.numSections > 1 ? "s" : ""} +{" "}
           {cart.extras.length > 0 ? cart.extras.join(", ") : "No Extras"}
-        </p> */}
+        </p>
         <p>You can expect an email within 1-3 business days.</p>
       </div>
     </section>

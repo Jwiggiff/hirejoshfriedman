@@ -14,6 +14,8 @@ export default function QuoteModal({ visible, setVisible, cart }) {
   }
 
   function handleSubmit(e) {
+    e.preventDefault();
+
     let formData = new FormData(e.target);
     let data = {};
     for (let [key, value] of formData.entries()) {
@@ -26,12 +28,9 @@ export default function QuoteModal({ visible, setVisible, cart }) {
       body: encode({ "form-name": "quote", ...data }),
     })
       .then(() => {
-        // navigateTo("/success?cart=" + encodeURIComponent(JSON.stringify(cart)))
         navigateTo("/success", { state: { cart } });
       })
       .catch((error) => alert(error));
-
-    e.preventDefault();
   }
 
   return (
@@ -50,7 +49,6 @@ export default function QuoteModal({ visible, setVisible, cart }) {
             </button>
           </div>
           <div className="modal--body">
-            <input type="hidden" name="form-name" value="quote" />
             <input
               type="hidden"
               name="numberOfSections"
