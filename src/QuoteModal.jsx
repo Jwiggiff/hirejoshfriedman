@@ -36,12 +36,7 @@ export default function QuoteModal({ visible, setVisible, cart }) {
   return (
     <>
       <div className={"quoteModal " + (visible ? "visible" : "")}>
-        <form
-          onSubmit={handleSubmit}
-          // name="quote"
-          // method="POST"
-          // action={"/success?cart=" + encodeURIComponent(JSON.stringify(cart))}
-        >
+        <form onSubmit={handleSubmit}>
           <div className="modal--header">
             <h1>Get a Quote!</h1>
             <button type="button" className="close" onClick={(e) => dismiss()}>
@@ -66,14 +61,13 @@ export default function QuoteModal({ visible, setVisible, cart }) {
               {cart.extras.length > 0 ? cart.extras.join(", ") : "No Extras"}
             </p>
             <label htmlFor="name">Name:</label>
-            <input type="text" name="name" id="name" />
+            <input type="text" name="name" id="name" required />
             <label htmlFor="email">Email:</label>
-            <input type="text" name="email" id="email" />
+            <input type="text" name="email" id="email" required />
             <label htmlFor="notes">Additional Notes:</label>
-            <textarea name="notes" id="notes" rows="8"></textarea>
+            <textarea name="notes" id="notes" rows="8" required></textarea>
           </div>
           <div className="modal--actions">
-            <a href="/success">test</a>
             <button className="accent">Get a Quote!</button>
           </div>
         </form>
