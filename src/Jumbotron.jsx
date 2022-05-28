@@ -47,9 +47,9 @@ export default function Jumbotron() {
       .addLabel("seventh")
       .to(q("h1:nth-child(3)"), { text: "Store?" })
       .addLabel("eighth")
-      .to(q("h1:first-child"), { translateX: "2ch", text: "Josh!" })
+      .to(q("h1:first-child"), { translateX: "0ch", opacity: 0 })
       .to(q("h1:nth-child(2)"), { opacity: 0 }, "<")
-      .to(q("h1:nth-child(3)"), { translateX: "-2ch", text: "Hire" }, "<")
+      .to(q("h1:nth-child(3)"), { translateX: "0ch", text: "I Can Help!" }, "<")
       .addLabel("ninth")
       .to(q("h1:nth-child(2n-1)"), { translateY: "-1em" })
       .to(q(".info"), { opacity: 1 }, "<")
@@ -73,9 +73,9 @@ export default function Jumbotron() {
       <h1>Need a Website?</h1>
       <h1>Need a Website?</h1>
       <ul className="info">
-        <li>Fun Animations</li>
-        <li>...Or Keep it Simple</li>
-        <li>Up to 3 Revisions</li>
+        <li>Personalized Design</li>
+        <li>Creative Animations</li>
+        <li>Search Engine Optimization</li>
       </ul>
       <div className="pastWork">
         <h2>Some of My Past Work:</h2>
