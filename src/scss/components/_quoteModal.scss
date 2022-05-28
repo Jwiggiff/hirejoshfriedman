@@ -22,6 +22,10 @@
     padding: 0 2rem 1rem 2rem;
     transition: opacity 0.2s ease-in-out, width 0s, height 0s;
 
+    @include media-query($small-screen) {
+      width: 20rem;
+    }
+
     + .modal-bg {
       opacity: 1;
       width: 100vw;

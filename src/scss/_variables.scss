@@ -14,3 +14,12 @@ $cursive: "Parisienne", cursive;
 
 $orelega: "Orelega One", cursive;
 $oleoscript: "Oleo Script Swash Caps", cursive;
+
+/* Media Query */
+$small-screen: 800px;
+
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}

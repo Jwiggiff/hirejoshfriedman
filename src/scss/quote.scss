@@ -32,14 +32,18 @@
 
   > div {
     display: flex;
+    gap: 1.5rem;
+    flex-flow: wrap;
     justify-content: space-evenly;
     margin-block: 6rem;
   }
 
   .footer {
+    padding: 0.5rem;
+    text-align: center;
     background-color: $neutral-dark;
     color: $neutral-light;
-    height: 2.5rem;
+    min-height: 2.5rem;
     display: grid;
     place-items: center;
     margin-block: 0;

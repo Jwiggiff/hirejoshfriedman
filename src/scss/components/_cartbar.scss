@@ -46,3 +46,12 @@
     font-size: 1.25em;
   }
 }
+
+
+@include media-query($small-screen) {
+  .cartBar {
+    .cart--body {
+      display: none;
+    }
+  }
+}
